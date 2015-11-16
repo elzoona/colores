@@ -16,6 +16,8 @@ cat = pygame.image.load('img/stand01.png')
 catX=10
 catY=10
 
+
+
 def loadSound():
     pygame.mixer.pre_init(frequency=22050, size=-16, channels=2, buffer=4096) #pre init to avoid lag
     pygame.mixer.init()
