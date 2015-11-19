@@ -2,6 +2,7 @@ import pygame, sys
 import random
 from pygame.locals import * #This imports constants like QUIT
 import glob
+import main as menu #Avoid conflict while calling main.py's main()
 
 FPS = 30
 SCREENWIDTH = 1280
@@ -48,6 +49,10 @@ def main():
                 pygame.mixer.quit()
                 pygame.quit()
                 sys.exit()
+            if event.type == KEYDOWN and event.key == pygame.K_F1:
+                pygame.mixer.quit()
+                pygame.quit()
+                menu.main()
 
             if event.type == KEYDOWN:
                 surface.fill((random.randrange(0,255,1),random.randrange(0,255,1),random.randrange(0,255,1)))
