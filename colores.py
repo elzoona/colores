@@ -14,8 +14,9 @@ SCREENHEIGHT = 720
 def loadCat():
     imageLibrary = glob.glob('img/stand*.png')
     cat = []
-    for item in imageLibrary:
+    for item in sorted(imageLibrary):
         cat.append(pygame.image.load(item))
+        print item
     return cat
 
 
@@ -51,7 +52,7 @@ def main():
     samples = loadSound()
     movingCat = loadCat()
 
-    interval = .08
+    interval = .04
     cycle = 0
 
     red = 0
@@ -70,8 +71,9 @@ def main():
         if cycle > interval:
             surface.fill((red, green, blue))
             surface.blit(movingCat[i], (10, 10))
-            i += 1
             print i
+            i += 1
+
             if i >= len(movingCat):
                 i=0
             cycle = 0
@@ -94,7 +96,7 @@ def main():
                 blue = random.randrange(0,255,1)
 
                 surface.fill((red, green, blue))
-                surface.blit(movingCat[i], (10, 10))                
+                surface.blit(movingCat[i], (10, 10))
                 samples[(random.randrange(0,len(samples),1))].play() #Kind of spaguetti, but allows to add more sounds without toching the code
 
 
