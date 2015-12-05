@@ -4,7 +4,7 @@ from pygame.locals import * #This imports constants like QUIT
 import glob
 import main as menu #Avoid conflict while calling main.py's main()
 
-FPS = 30
+FPS = 60
 SCREENWIDTH = 1280
 SCREENHEIGHT = 720
 
@@ -25,7 +25,6 @@ def cat(cat, posx, posy, status, surface):
             surface.blit(cat[i], (posx, posy))
             pygame.display.flip()
             pygame.time.delay(100)
-            surface.fill((random.randrange(0,255,1),random.randrange(0,255,1),random.randrange(0,255,1)))
             print i
 
 
@@ -52,8 +51,31 @@ def main():
     samples = loadSound()
     movingCat = loadCat()
 
+    interval = .08
+    cycle = 0
+
+    red = 0
+    green = 0
+    blue = 0
+    i=0
+
 
     while True:
+        milliseconds = fpsClock.tick(FPS) #ms since last frame
+        seconds = milliseconds / 1000.0
+
+        cycle += seconds
+
+
+        if cycle > interval:
+            surface.fill((red, green, blue))
+            surface.blit(movingCat[i], (10, 10))
+            i += 1
+            print i
+            if i >= len(movingCat):
+                i=0
+            cycle = 0
+
 
 
         for event in pygame.event.get():
@@ -67,13 +89,19 @@ def main():
                 menu.main()
 
             if event.type == KEYDOWN:
-                surface.fill((random.randrange(0,255,1),random.randrange(0,255,1),random.randrange(0,255,1)))
+                red = random.randrange(0,255,1)
+                green = random.randrange(0,255,1)
+                blue = random.randrange(0,255,1)
+
+                surface.fill((red, green, blue))
+                surface.blit(movingCat[i], (10, 10))                
                 samples[(random.randrange(0,len(samples),1))].play() #Kind of spaguetti, but allows to add more sounds without toching the code
-                cat(movingCat, 10, 10, "standing", surface)
+
 
 
         pygame.display.update()
-        fpsClock.tick(FPS)
+        pygame.display.flip()
+
 
 if __name__ == '__main__':
     main()
