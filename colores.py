@@ -8,9 +8,6 @@ FPS = 60
 SCREENWIDTH = 1280
 SCREENHEIGHT = 720
 
-
-
-
 def loadCat():
     imageLibrary = glob.glob('img/stand*.png')
     cat = []
@@ -60,6 +57,12 @@ def main():
     blue = 0
     i=0
 
+    scalex = SCREENHEIGHT / 10
+
+    close = pygame.image.load('img/close.png')
+    scaledClose = pygame.transform.scale(close, (scalex, scalex))
+
+
 
     while True:
         milliseconds = fpsClock.tick(FPS) #ms since last frame
@@ -71,7 +74,8 @@ def main():
         if cycle > interval:
             surface.fill((red, green, blue))
             surface.blit(movingCat[i], (10, 10))
-            print i
+            surface.blit(scaledClose, (SCREENWIDTH - scalex - 50, SCREENHEIGHT - scalex - 50))
+
             i += 1
 
             if i >= len(movingCat):
@@ -90,6 +94,16 @@ def main():
                 pygame.quit()
                 menu.main()
 
+            if event.type == MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                print pos
+                print scaledClose.get_offset()
+                print scaledClose.collidepoint(pos)
+                if scaledClose.collidepoint(pos):
+                    pygame.mixer.quit()
+                    pygame.quit()
+                    menu.main()
+
             if event.type == KEYDOWN:
                 red = random.randrange(0,255,1)
                 green = random.randrange(0,255,1)
@@ -98,6 +112,7 @@ def main():
                 surface.fill((red, green, blue))
                 surface.blit(movingCat[i], (10, 10))
                 samples[(random.randrange(0,len(samples),1))].play() #Kind of spaguetti, but allows to add more sounds without toching the code
+
 
 
 

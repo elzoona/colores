@@ -1,1 +1,3 @@
 Cat asset: http://www.gameart2d.com/freebies.html
+
+Close button: https://openclipart.org/detail/183568/close-button
