@@ -22,3 +22,13 @@ class LoadSound ():
         return samples
 
 class LoadSprites ():
+    
+    def __init__(self, spriteLibrary):
+        self.spriteLibrary = spriteLibrary
+        self.spriteLibrary = glob.glob(self.spriteLibrary)
+
+    def create_list(self):
+        sprites = []
+        for item in self.spriteLibrary:
+            sprites.append(pygame.image.load(item))
+        return sprites
