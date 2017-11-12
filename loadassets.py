@@ -1,6 +1,5 @@
-import pygame
-import random
 import glob
+import pygame
 
 class LoadSound ():
     """Loads the directory where the sound files are

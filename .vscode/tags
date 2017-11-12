@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FPS	../colores.py	/^FPS=60$/;"	kind:variable	line:8
+LoadSound	../loadassets.py	/^class LoadSound ():$/;"	kind:class	line:4
+LoadSprites	../loadassets.py	/^class LoadSprites ():$/;"	kind:class	line:23
+SCREENHEIGHT	../colores.py	/^SCREENHEIGHT=800$/;"	kind:variable	line:10
+SCREENWIDTH	../colores.py	/^SCREENWIDTH=1280$/;"	kind:variable	line:9
+__init__	../loadassets.py	/^    def __init__(self, soundLibrary):$/;"	kind:member	line:13
+__init__	../loadassets.py	/^    def __init__(self, spriteLibrary):$/;"	kind:member	line:25
+cat	../colores.py	/^cat=loadassets.LoadSprites('img\/colores\/*.png').create_list()$/;"	kind:variable	line:12
+colores	../main.py	/^import colores$/;"	kind:namespace	line:1
+colores.py	../colores.py	1;"	kind:file	line:1
+create_list	../loadassets.py	/^    def create_list(self):$/;"	kind:member	line:17
+create_list	../loadassets.py	/^    def create_list(self):$/;"	kind:member	line:29
+glob	../loadassets.py	/^import glob$/;"	kind:namespace	line:1
+kalimba	../colores.py	/^kalimba=loadassets.LoadSound('sounds\/colores\/*.wav').create_list()$/;"	kind:variable	line:13
+loadassets	../colores.py	/^import loadassets$/;"	kind:namespace	line:3
+loadassets	../main.py	/^import loadassets$/;"	kind:namespace	line:2
+loadassets.py	../loadassets.py	1;"	kind:file	line:1
+main	../colores.py	/^def main():$/;"	kind:function	line:18
+main	../main.py	/^def main():$/;"	kind:function	line:10
+main.py	../main.py	1;"	kind:file	line:1
+menu	../colores.py	/^import main as menu$/;"	kind:namespace	line:6
+pygame	../colores.py	/^import pygame$/;"	kind:namespace	line:1
+pygame	../loadassets.py	/^import pygame$/;"	kind:namespace	line:2
+pygame	../main.py	/^import pygame$/;"	kind:namespace	line:3
+random	../colores.py	/^import random$/;"	kind:namespace	line:2
+read	../main.py	/^def read():$/;"	kind:function	line:5
